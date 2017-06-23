@@ -7,7 +7,8 @@ function callAPI(url, token) {
     console.log(`Request api url ${url}`);
     https.get(`${url}?token=${token}`, (res) => {
         res.on("data", (data) => {
-            console.log(data);
+            console.log("Data returned stopping process");
+            process.exit();
         });
     }).on("error", err => {
         console.error("Error");
